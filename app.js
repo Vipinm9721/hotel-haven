@@ -1,7 +1,7 @@
-import { db } from './firebase/firebase-config.js';
+import { db } from './firebase-config.js';
 import { ref, push, onValue, update, remove } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
-import { fetchHotels } from './components/crud.js';
-import { displayHotels } from './components/displayHotels.js';
+import { fetchHotels } from './crud.js';
+import { displayHotels } from './displayHotels.js';
 
 let allHotels = [];
 let currentPage = 0;
