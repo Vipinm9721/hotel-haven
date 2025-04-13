@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Haven</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script type="module" src="firebase/firebase-config.js"></script>
+  <script type="module" src="app.js"></script>
+</head>
+<body class="bg-gray-100">
+  <div class="max-w-4xl mx-auto">
+    <h1 class="text-4xl font-bold text-center mb-4">Hotel Haven</h1>
+
+    <!-- Search + Filters -->
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+      <input id="searchInput" class="border p-2 mb-2 md:mb-0" type="text" placeholder="Search by name or location">
+
+      <div class="flex space-x-2">
+        <select id="ratingFilter" class="border p-2">
+          <option value="">All Ratings</option>
+          <option value="3">3+</option>
+          <option value="4">4+</option>
+          <option value="5">5 only</option>
+        </select>
+
+        <label><input type="checkbox" id="availabilityFilter"> Available only</label>
+      </div>
+    </div>
+
+    <!-- Add Hotel -->
+    <form id="addHotelForm" class="space-y-2 mb-6">
+      <input class="border p-2 w-full" type="text" id="name" placeholder="Hotel Name" required>
+      <input class="border p-2 w-full" type="text" id="location" placeholder="Location" required>
+      <input class="border p-2 w-full" type="number" id="rating" placeholder="Rating (1-5)" required>
+      <input class="border p-2 w-full" type="number" id="price" placeholder="Price" required>
+      <input class="border p-2 w-full" type="text" id="amenities" placeholder="Amenities (comma separated)" required>
+      <label><input type="checkbox" id="available"> Available</label>
+      <button class="bg-blue-600 text-white p-2 rounded" type="submit">Add Hotel</button>
+    </form>
+
+    <!-- Hotel List -->
+    <div id="hotelList"></div>
+
+    <!-- Pagination -->
+    <div class="flex justify-between mt-4">
+      <button id="prevBtn" class="bg-gray-500 text-white px-4 py-2">Previous</button>
+      <button id="nextBtn" class="bg-gray-500 text-white px-4 py-2">Next</button>
+    </div>
+  </div>
+</body>
+</html>
